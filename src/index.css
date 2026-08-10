@@ -43,14 +43,31 @@
     background: #000;
   }
 
-  .btn-primary .btn-arrow,
-  .btn-ghost .btn-arrow {
+  .btn .btn-arrow {
     transition: transform 0.2s ease;
   }
 
-  .btn-primary:hover .btn-arrow,
-  .btn-ghost:hover .btn-arrow {
+  .btn:hover .btn-arrow {
     transform: translateX(3px);
+  }
+
+  .btn-white {
+    background: #fff;
+    color: var(--color-ink);
+  }
+
+  .btn-white:hover {
+    background: color-mix(in srgb, #fff 85%, #000);
+  }
+
+  .btn-ghost-light {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #fff;
+  }
+
+  .btn-ghost-light:hover {
+    border-color: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.08);
   }
 
   .btn-ghost {
