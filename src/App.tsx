@@ -1,3 +1,4 @@
+import { MotionConfig } from 'motion/react'
 import { Nav } from './components/Nav'
 import { Hero } from './components/Hero'
 import { Work } from './components/Work'
@@ -9,7 +10,7 @@ import { Footer } from './components/Footer'
 
 function App() {
   return (
-    <>
+    <MotionConfig reducedMotion="user">
       <Nav />
       <main>
         <Hero />
@@ -20,7 +21,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
-    </>
+    </MotionConfig>
   )
 }
 

@@ -1,3 +1,7 @@
+import { motion } from 'motion/react'
+import { fadeUp, stagger } from './motion'
+import { Reveal } from './Reveal'
+
 const steps = [
   {
     number: '01',
@@ -29,25 +33,36 @@ export function Approach() {
   return (
     <section id="approach" className="border-t border-line">
       <div className="mx-auto w-full max-w-6xl px-6 py-20 md:px-10 md:py-28">
-        <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] md:gap-16">
-          <div>
-            <p className="eyebrow-accent">Engineering Approach</p>
-            <h2 className="mt-5 font-display text-[clamp(2rem,4.5vw,3.25rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-ink">
-              My Engineering Approach
-            </h2>
+        <Reveal>
+          <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] md:gap-16">
+            <div>
+              <p className="eyebrow-accent">Engineering Approach</p>
+              <h2 className="mt-5 font-display text-[clamp(2rem,4.5vw,3.25rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-ink">
+                My Engineering Approach
+              </h2>
+            </div>
+            <p className="max-w-xl self-end text-[17px] leading-[1.75] text-muted">
+              I believe good software is more than working code. It should be
+              understandable, maintainable, and designed with long-term growth in
+              mind.
+            </p>
           </div>
-          <p className="max-w-xl self-end text-[17px] leading-[1.75] text-muted">
-            I believe good software is more than working code. It should be
-            understandable, maintainable, and designed with long-term growth in
-            mind.
-          </p>
-        </div>
+        </Reveal>
 
-        <ol className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 md:mt-16 lg:grid-cols-4">
+        <motion.ol
+          className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 md:mt-16 lg:grid-cols-4"
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-80px' }}
+        >
           {steps.map((step) => (
-            <li
+            <motion.li
               key={step.number}
               className="flex flex-col rounded-2xl border border-line bg-white/60 p-6 transition-colors duration-200 hover:border-ink/25 md:p-7"
+              variants={fadeUp}
+              whileHover={{ y: -4 }}
+              transition={{ type: 'spring', stiffness: 320, damping: 24 }}
             >
               <span className="font-mono text-sm text-accent">
                 {step.number}
@@ -58,9 +73,9 @@ export function Approach() {
               <p className="mt-3 text-[15px] leading-relaxed text-muted">
                 {step.description}
               </p>
-            </li>
+            </motion.li>
           ))}
-        </ol>
+        </motion.ol>
       </div>
     </section>
   )

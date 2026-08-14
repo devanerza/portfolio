@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { motion, useScroll, useSpring } from 'motion/react'
 
 const links = [
   { label: 'Work', href: '#work' },
@@ -9,13 +10,20 @@ const links = [
 ]
 
 export function Nav() {
-  const [scrolled, setScrolled] = useState(() => window.scrollY > 8)
+  const [scrolled, setScrolled] = useState(() => window.scrollY > 100)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8)
+    const onScroll = () => setScrolled(window.scrollY > 100)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  const { scrollYProgress } = useScroll()
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 120,
+    damping: 30,
+    restDelta: 0.001,
+  })
 
   return (
     <header
@@ -25,6 +33,11 @@ export function Nav() {
           : 'border-transparent bg-transparent'
       }`}
     >
+      <motion.div
+        className="absolute inset-x-0 bottom-0 h-px origin-left bg-accent"
+        style={{ scaleX }}
+        aria-hidden="true"
+      />
       <nav
         className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6 md:px-10 py-6"
         aria-label="Main navigation"

@@ -1,4 +1,7 @@
+import { motion } from 'motion/react'
 import { ArrowUpRightIcon } from './icons'
+import { fadeUp, stagger } from './motion'
+import { Reveal } from './Reveal'
 
 type Project = {
   index: string
@@ -94,7 +97,10 @@ const projects: Project[] = [
 
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="grid gap-8 border-t border-line py-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] md:gap-16 md:py-14">
+    <motion.article
+      className="grid gap-8 border-t border-line py-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] md:gap-16 md:py-14"
+      variants={fadeUp}
+    >
       <div>
         <div className="flex flex-wrap items-center gap-3">
           <span className="font-mono text-xs text-faint">{project.index}</span>
@@ -126,7 +132,7 @@ function ProjectCard({ project }: { project: Project }) {
           </div>
         ))}
       </dl>
-    </article>
+    </motion.article>
   )
 }
 
@@ -134,17 +140,24 @@ export function Work() {
   return (
     <section id="work">
       <div className="mx-auto w-full max-w-6xl px-6 py-20 md:px-10 md:py-28">
-        <div className="max-w-2xl">
+        <Reveal className="max-w-2xl">
           <p className="eyebrow-accent">Selected Work</p>
           <h2 className="mt-5 font-display text-[clamp(2rem,4.5vw,3.25rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-ink">
             Selected Work
           </h2>
-        </div>
+        </Reveal>
 
         <div className="mt-6 md:mt-8">
-          {projects.map((project) => (
-            <ProjectCard key={project.index} project={project} />
-          ))}
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-80px' }}
+          >
+            {projects.map((project) => (
+              <ProjectCard key={project.index} project={project} />
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>
