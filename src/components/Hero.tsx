@@ -82,7 +82,7 @@ export function Hero() {
           />
 
           <motion.div
-            className="relative mx-auto w-full max-w-xl px-8 pb-16 pt-16 md:max-w-6xl md:px-10 md:pb-28 md:pt-24"
+            className="relative mx-auto flex h-full w-full max-w-xl flex-col justify-center px-8 pb-16 pt-16 landscape:justify-start md:max-w-6xl xl:justify-start md:px-10 md:pb-28 md:pt-24"
             style={{ y: contentY, opacity: contentOpacity }}
           >
             <div className="max-w-3xl">
