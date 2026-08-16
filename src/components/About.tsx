@@ -3,7 +3,7 @@ import { Reveal } from './Reveal'
 export function About() {
   return (
     <section id="about" className="border-t border-line">
-      <div className="mx-auto w-full max-w-6xl px-6 py-20 md:px-10 md:py-28">
+      <div className="mx-auto w-full max-w-6xl px-6 py-16 md:px-10 md:py-28">
         <Reveal>
           <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] md:gap-16">
             <div>
@@ -13,7 +13,7 @@ export function About() {
               </h2>
             </div>
 
-            <div className="max-w-2xl space-y-6 text-[17px] leading-[1.8] text-muted">
+            <div className="max-w-2xl space-y-6 text-base leading-[1.8] text-muted md:text-[17px]">
               <p>
                 I enjoy building software that balances technical quality with
                 practical business value. My interests span backend engineering,

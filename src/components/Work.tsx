@@ -126,7 +126,7 @@ function ProjectCard({ project }: { project: Project }) {
         {project.specs.map((spec) => (
           <div key={spec.label}>
             <dt className="eyebrow">{spec.label}</dt>
-            <dd className="mt-2.5 text-[15px] leading-relaxed text-muted">
+            <dd className="mt-2.5 text-sm leading-relaxed text-muted md:text-[15px]">
               {spec.detail}
             </dd>
           </div>
@@ -139,7 +139,7 @@ function ProjectCard({ project }: { project: Project }) {
 export function Work() {
   return (
     <section id="work">
-      <div className="mx-auto w-full max-w-6xl px-6 py-20 pt-[-50px] md:px-10 md:py-28">
+      <div className="mx-auto w-full max-w-6xl px-6 py-16 pt-[-50px] md:px-10 md:py-28">
         <Reveal className="max-w-2xl">
           <p className="eyebrow-accent">Selected Work</p>
           <h2 className="mt-5 font-display text-[clamp(2rem,4.5vw,3.25rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-ink">

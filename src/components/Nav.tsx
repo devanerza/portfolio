@@ -39,7 +39,7 @@ export function Nav() {
         aria-hidden="true"
       />
       <nav
-        className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6 md:px-10 py-6"
+        className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6 md:px-10 py-7"
         aria-label="Main navigation"
       >
         <a

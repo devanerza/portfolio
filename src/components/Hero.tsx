@@ -53,9 +53,9 @@ export function Hero() {
 
   return (
     <section id="top" className="relative -mt-16">
-      <div ref={scrollRef} className="relative h-[250vh]">
+      <div ref={scrollRef} className="relative h-[180svh] md:h-[250vh]">
         <motion.div
-          className="sticky top-0 h-screen overflow-hidden"
+          className="sticky top-0 h-svh overflow-hidden"
           style={{ opacity: heroOpacity }}
         >
           <motion.div className="absolute inset-0" style={{ scale: videoScale }}>
@@ -82,12 +82,12 @@ export function Hero() {
           />
 
           <motion.div
-            className="relative mx-auto w-full max-w-6xl px-6 pb-20 pt-16 md:px-10 md:pb-28 md:pt-24"
+            className="relative mx-auto w-full max-w-xl px-8 pb-16 pt-16 md:max-w-6xl md:px-10 md:pb-28 md:pt-24"
             style={{ y: contentY, opacity: contentOpacity }}
           >
             <div className="max-w-3xl">
           <motion.h1
-            className="mt-5 font-display text-[clamp(2.75rem,7vw,4.9rem)] font-semibold leading-[1.02] tracking-[-0.035em] text-white"
+            className="mt-10 pt-3 font-display text-[clamp(2.75rem,7vw,4.9rem)] font-semibold leading-[1.02] tracking-[-0.035em] text-white"
             variants={wordContainer}
             initial="hidden"
             animate="visible"
@@ -96,7 +96,7 @@ export function Hero() {
             {headline.split(' ').map((w, i) => (
               <span
                 key={i}
-                className="inline-block overflow-hidden pb-[0.08em] align-bottom"
+                className="inline-block overflow-hidden pb-[0.08em] text-[clamp(2.25rem,7.5vw,68px)] align-bottom"
                 aria-hidden="true"
               >
                 <motion.span className="inline-block" variants={word}>
