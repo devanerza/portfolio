@@ -139,7 +139,7 @@ function ProjectCard({ project }: { project: Project }) {
 export function Work() {
   return (
     <section id="work">
-      <div className="mx-auto w-full max-w-6xl px-6 py-20 md:px-10 md:py-28">
+      <div className="mx-auto w-full max-w-6xl px-6 py-20 pt-[-50px] md:px-10 md:py-28">
         <Reveal className="max-w-2xl">
           <p className="eyebrow-accent">Selected Work</p>
           <h2 className="mt-5 font-display text-[clamp(2rem,4.5vw,3.25rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-ink">
