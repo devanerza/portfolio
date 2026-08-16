@@ -11,20 +11,20 @@ import { Reveal } from './Reveal'
 const links = [
   {
     label: 'Email',
-    detail: 'hello@devanezra.dev',
-    href: 'mailto:hello@devanezra.dev',
+    detail: 'devanerza26@gmail.com',
+    href: 'mailto:devanerza26@gmail.com',
     icon: MailIcon,
   },
   {
     label: 'LinkedIn',
-    detail: 'in/devanezra',
-    href: 'https://linkedin.com/in/devanezra',
+    detail: 'in/devan-erza',
+    href: 'https://linkedin.com/in/devan-erza',
     icon: LinkedInIcon,
   },
   {
     label: 'GitHub',
-    detail: '@devanezra',
-    href: 'https://github.com/devanezra',
+    detail: '@devanerza',
+    href: 'https://github.com/devanerza',
     icon: GitHubIcon,
   },
 ]
@@ -32,7 +32,7 @@ const links = [
 export function Contact() {
   return (
     <section id="contact" className="border-t border-line bg-ink text-paper">
-      <div className="relative mx-auto w-full max-w-6xl px-6 py-20 md:px-10 md:py-32">
+      <div className="relative mx-auto w-full max-w-6xl px-6 py-16 md:px-10 md:py-32">
         <motion.div
           className="pointer-events-none absolute inset-x-0 top-0 h-64 opacity-60"
           style={{
@@ -53,7 +53,7 @@ export function Contact() {
               Let’s Build{' '}
               <span className="text-accent-bright">Something Meaningful</span>
             </h2>
-            <p className="mt-7 max-w-xl text-[17px] leading-[1.75] text-white/65">
+            <p className="mt-7 max-w-xl text-base leading-[1.75] text-white/65 md:text-[17px]">
               Whether you’re looking for a developer to build a web application,
               collaborate on a project, or discuss new ideas, I’d be happy to
               connect.
@@ -62,7 +62,7 @@ export function Contact() {
         </Reveal>
 
         <motion.div
-          className="relative mt-14 grid gap-4 sm:grid-cols-3"
+          className="relative mt-10 grid gap-4 sm:grid-cols-3 md:mt-14"
           variants={stagger}
           initial="hidden"
           whileInView="visible"
