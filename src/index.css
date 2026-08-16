@@ -84,6 +84,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    background-color: var(--color-ink);
   }
 
   body {
@@ -92,11 +93,35 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
   }
 
   ::selection {
     background: var(--color-ink);
     color: var(--color-paper);
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-ink);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--color-ink) 25%, transparent);
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in srgb, var(--color-ink) 45%, transparent);
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--color-ink) 25%, transparent) var(--color-ink);
   }
 
   :focus-visible {
