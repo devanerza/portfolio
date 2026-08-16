@@ -152,7 +152,7 @@ export function Work() {
             variants={stagger}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-80px' }}
+            viewport={{ once: false, margin: '-80px' }}
           >
             {projects.map((project) => (
               <ProjectCard key={project.index} project={project} />

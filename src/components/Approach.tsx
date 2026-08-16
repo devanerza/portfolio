@@ -54,7 +54,7 @@ export function Approach() {
           variants={stagger}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-80px' }}
+          viewport={{ once: false, margin: '-80px' }}
         >
           {steps.map((step) => (
             <motion.li
