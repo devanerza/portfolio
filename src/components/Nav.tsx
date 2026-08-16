@@ -10,10 +10,10 @@ const links = [
 ]
 
 export function Nav() {
-  const [scrolled, setScrolled] = useState(() => window.scrollY > 100)
+  const [scrolled, setScrolled] = useState(() => window.scrollY > 800)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 100)
+    const onScroll = () => setScrolled(window.scrollY > 800)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])

@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import { motion, type Variants } from 'motion/react'
+import { useEffect, useRef, useState } from 'react'
+import { motion, useScroll, useTransform, type Variants } from 'motion/react'
 import { ArrowRightIcon, GitHubIcon } from './icons'
 
 const headline = 'Building software that solves real problems.'
@@ -40,31 +40,52 @@ export function Hero() {
     return () => mq.removeEventListener('change', onChange)
   }, [])
 
-  return (
-    <section id="top" className="relative -mt-16 overflow-hidden">
-      {allowMotion ? (
-        <video
-          className="absolute inset-0 h-full w-full object-cover"
-          src="/hero.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          disablePictureInPicture
-          aria-hidden="true"
-          tabIndex={-1}
-        />
-      ) : (
-        <div className="absolute inset-0 bg-ink" aria-hidden="true" />
-      )}
-      <div
-        className="absolute inset-0 bg-gradient-to-b from-ink/85 via-ink/35 to-ink/55"
-        aria-hidden="true"
-      />
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: scrollRef,
+    offset: ['start 0', 'end 1'],
+  })
 
-      <div className="relative mx-auto w-full max-w-6xl px-6 pb-20 pt-16 md:px-10 md:pb-28 md:pt-24">
-        <div className="max-w-3xl">
+  const videoScale = useTransform(scrollYProgress, [0, 1], [1, 1.15])
+  const contentY = useTransform(scrollYProgress, [0, 0.85], [0, -140])
+  const contentOpacity = useTransform(scrollYProgress, [0.05, 0.65], [1, 0])
+  const heroOpacity = useTransform(scrollYProgress, [0.8, 1], [1, 0])
+
+  return (
+    <section id="top" className="relative -mt-16">
+      <div ref={scrollRef} className="relative h-[250vh]">
+        <motion.div
+          className="sticky top-0 h-screen overflow-hidden"
+          style={{ opacity: heroOpacity }}
+        >
+          <motion.div className="absolute inset-0" style={{ scale: videoScale }}>
+            {allowMotion ? (
+              <video
+                className="absolute inset-0 h-full w-full object-cover"
+                src="/video.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                disablePictureInPicture
+                aria-hidden="true"
+                tabIndex={-1}
+              />
+            ) : (
+              <div className="absolute inset-0 bg-ink" aria-hidden="true" />
+            )}
+          </motion.div>
+          <div
+            className="absolute inset-0 bg-gradient-to-b from-ink/85 via-ink/35 to-ink/55"
+            aria-hidden="true"
+          />
+
+          <motion.div
+            className="relative mx-auto w-full max-w-6xl px-6 pb-20 pt-16 md:px-10 md:pb-28 md:pt-24"
+            style={{ y: contentY, opacity: contentOpacity }}
+          >
+            <div className="max-w-3xl">
           <motion.h1
             className="mt-5 font-display text-[clamp(2.75rem,7vw,4.9rem)] font-semibold leading-[1.02] tracking-[-0.035em] text-white"
             variants={wordContainer}
@@ -118,8 +139,10 @@ export function Hero() {
               GitHub
             </a>
           </motion.div>
-        </div>
-      </div>
+          </div>
+        </motion.div>
+      </motion.div>
+    </div>
     </section>
   )
 }
