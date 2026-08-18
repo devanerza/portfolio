@@ -73,11 +73,11 @@ export function Hero() {
                 tabIndex={-1}
               />
             ) : (
-              <div className="absolute inset-0 bg-ink" aria-hidden="true" />
+              <div className="absolute inset-0 bg-night" aria-hidden="true" />
             )}
           </motion.div>
           <div
-            className="absolute inset-0 bg-gradient-to-b from-ink/85 via-ink/35 to-ink/55"
+            className="absolute inset-0 bg-gradient-to-b from-night/85 via-night/35 to-night/55"
             aria-hidden="true"
           />
 

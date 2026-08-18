@@ -31,7 +31,7 @@ const links = [
 
 export function Contact() {
   return (
-    <section id="contact" className="border-t border-line bg-ink text-paper">
+    <section id="contact" className="border-t border-line bg-night text-white">
       <div className="relative mx-auto w-full max-w-6xl px-6 py-16 md:px-10 md:py-32">
         <motion.div
           className="pointer-events-none absolute inset-x-0 top-0 h-64 opacity-60"

@@ -31,7 +31,7 @@ const steps = [
 
 export function Approach() {
   return (
-    <section id="approach" className="border-t border-line">
+    <section id="approach" className="light border-t border-line bg-paper">
       <div className="mx-auto w-full max-w-6xl px-6 py-16 md:px-10 md:py-28">
         <Reveal>
           <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] md:gap-16">
