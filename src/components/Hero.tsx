@@ -55,7 +55,7 @@ export function Hero() {
     <section id="top" className="relative -mt-16">
       <div ref={scrollRef} className="relative h-[280dvh] md:h-[340dvh]">
         <motion.div
-          className="sticky top-0 h-svh overflow-hidden"
+          className="sticky top-0 h-dvh overflow-hidden"
           style={{ opacity: heroOpacity }}
         >
           <motion.div className="absolute inset-0" style={{ scale: videoScale }}>
