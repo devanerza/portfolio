@@ -39,7 +39,7 @@ export function Nav() {
     <header
       className={`sticky top-0 z-40 transition-colors duration-300 ${
         scrolled
-          ? 'border-line bg-paper/85 backdrop-blur-md'
+          ? 'border-line bg-paper/25 backdrop-blur-md'
           : 'border-transparent bg-transparent'
       }`}
     >
@@ -54,8 +54,8 @@ export function Nav() {
       >
         <a
           href="#top"
-          className={`font-display text-[15px] font-semibold tracking-tight transition-colors duration-300 ${
-            scrolled ? 'text-ink' : 'text-white'
+          className={`font-display text-[20px] font-semibold tracking-tight transition-colors duration-300 ${
+            scrolled ? 'text-white' : 'text-white'
           }`}
         >
           Devan Erza Farandi
@@ -69,8 +69,8 @@ export function Nav() {
               href={link.href}
               className={`font-mono text-[12px] uppercase tracking-[0.14em] transition-colors duration-300 ${
                 scrolled
-                  ? 'text-muted hover:text-ink'
-                  : 'text-white/70 hover:text-white'
+                  ? 'text-white border-b border-transparent hover:border-accent'
+                  : 'text-white/70 border-b border-transparent hover:border-accent hover:text-white'
               }`}
             >
               {link.label}
@@ -116,7 +116,7 @@ export function Nav() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2, ease: 'easeOut' }}
-            className="absolute inset-x-0 top-full border-b border-line bg-paper/95 backdrop-blur-md md:hidden"
+            className="absolute inset-x-0 top-full border-b border-line bg-paper/25 backdrop-blur-md md:hidden"
           >
             <nav
               className="mx-auto w-full max-w-xl px-6"
