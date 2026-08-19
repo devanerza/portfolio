@@ -16,7 +16,7 @@ const projects: Project[] = [
     index: '01',
     title: 'Todo List API',
     category: 'Backend Engineering',
-    href: 'https://github.com/devanezra',
+    href: 'https://github.com/devanerza/to-do-API',
     specs: [
       {
         label: 'Problem',
@@ -43,7 +43,7 @@ const projects: Project[] = [
     index: '02',
     title: 'SMAT-TRIK',
     category: 'Full-Stack Web Application',
-    href: 'https://github.com/devanezra',
+    href: 'https://github.com/devanerza/SMAT-TRIK',
     specs: [
       {
         label: 'Problem',
@@ -70,7 +70,7 @@ const projects: Project[] = [
     index: '03',
     title: 'Naraleaf',
     category: 'Corporate Website',
-    href: 'https://github.com/devanezra',
+    href: 'https://github.com/devanerza/naraleaf',
     specs: [
       {
         label: 'Problem',
