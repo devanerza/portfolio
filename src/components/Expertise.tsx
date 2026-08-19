@@ -30,7 +30,7 @@ export function Expertise() {
     <section id="expertise" className="border-t border-line">
       <div className="mx-auto w-full max-w-6xl px-6 py-16 md:px-10 md:py-28">
         <Reveal className="max-w-2xl">
-          <p className="eyebrow-accent">Technical Expertise</p>
+          <p className="eyebrow-accent">Expertise</p>
           <h2 className="mt-5 font-display text-[clamp(2rem,4.5vw,3.25rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-ink">
             Technical Expertise
           </h2>

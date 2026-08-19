@@ -36,7 +36,7 @@ export function Approach() {
         <Reveal>
           <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] md:gap-16">
             <div>
-              <p className="eyebrow-accent">Engineering Approach</p>
+              <p className="eyebrow-accent">Approach</p>
               <h2 className="mt-5 font-display text-[clamp(2rem,4.5vw,3.25rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-ink">
                 My Engineering Approach
               </h2>

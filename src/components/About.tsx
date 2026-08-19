@@ -9,7 +9,7 @@ export function About() {
             <div>
               <p className="eyebrow-accent">About</p>
               <h2 className="mt-5 font-display text-[clamp(2rem,4.5vw,3.25rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-ink">
-                About
+                About Me
               </h2>
             </div>
 
