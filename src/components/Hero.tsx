@@ -53,7 +53,7 @@ export function Hero() {
 
   return (
     <section id="top" className="relative -mt-16">
-      <div ref={scrollRef} className="relative h-[180svh] md:h-[250vh]">
+      <div ref={scrollRef} className="relative h-[280svh] md:h-[340vh]">
         <motion.div
           className="sticky top-0 h-svh overflow-hidden"
           style={{ opacity: heroOpacity }}
