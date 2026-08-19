@@ -51,7 +51,7 @@ export function Contact() {
             </p>
             <h2 className="mt-6 font-display text-[clamp(2.25rem,5vw,3.75rem)] font-semibold leading-[1.04] tracking-[-0.03em]">
               Let’s Build{' '}
-              <span className="text-accent-bright">Something Meaningful</span>
+              <span className="text-accent">Something Meaningful</span>
             </h2>
             <p className="mt-7 max-w-xl text-base leading-[1.75] text-white/65 md:text-[17px]">
               Whether you’re looking for a developer to build a web application,
@@ -80,7 +80,7 @@ export function Contact() {
               transition={{ type: 'spring', stiffness: 320, damping: 24 }}
             >
               <span className="flex min-w-0 items-center gap-3.5">
-                <link.icon className="h-5 w-5 flex-none text-white/50 transition-colors group-hover:text-white" />
+                <link.icon className="h-5 w-5 flex-none text-accent transition-colors group-hover:text-white" />
                 <span className="min-w-0">
                   <span className="block text-[15px] font-medium leading-tight text-white/90">
                     {link.label}
