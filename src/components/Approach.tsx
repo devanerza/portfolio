@@ -1,5 +1,5 @@
 import { motion } from 'motion/react'
-import { fadeUp, stagger } from './motion'
+import { fadeUp } from './motion'
 import { Reveal } from './Reveal'
 
 const steps = [
@@ -49,33 +49,39 @@ export function Approach() {
           </div>
         </Reveal>
 
-        <motion.ol
-          className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 md:mt-16 lg:grid-cols-4"
-          variants={stagger}
+        <motion.div
+          className="mt-10 md:mt-16"
+          variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, margin: '-80px' }}
         >
-          {steps.map((step) => (
-            <motion.li
-              key={step.number}
-              className="flex flex-col rounded-2xl border border-line bg-white/60 p-6 transition-colors duration-200 hover:border-ink/25 md:p-7"
-              variants={fadeUp}
-              whileHover={{ y: -4 }}
-              transition={{ type: 'spring', stiffness: 320, damping: 24 }}
-            >
-              <span className="font-mono text-sm text-accent">
-                {step.number}
-              </span>
-              <h3 className="mt-5 font-display text-lg font-semibold leading-snug tracking-[-0.01em] text-ink">
-                {step.title}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted md:text-[15px]">
-                {step.description}
-              </p>
-            </motion.li>
-          ))}
-        </motion.ol>
+          <div className="flex flex-col items-stretch md:flex-row md:items-stretch">
+              {steps.map((step, index) => (
+                <div key={step.number} className="contents">
+                  {index > 0 && (
+                    <div className="arch-connector self-center">
+                      <span className="arch-connector-line" />
+                      <span className="arch-connector-packet" />
+                    </div>
+                  )}
+                  <div className="arch-node flex min-w-0 flex-1 items-center gap-3.5 px-5 py-4">
+                    <span className="flex h-10 w-10 flex-none items-center justify-center rounded-[10px] border border-white/10 bg-white/5 font-mono text-[13px] text-paper">
+                      {step.number}
+                    </span>
+                    <span className="min-w-0">
+                      <span className="block text-[15px] font-medium leading-snug text-white/90">
+                        {step.title}
+                      </span>
+                      <span className="mt-1.5 block text-[10px] leading-relaxed text-white/50">
+                        {step.description}
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+        </motion.div>
       </div>
     </section>
   )
